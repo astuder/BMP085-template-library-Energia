@@ -1,9 +1,17 @@
-I2C-based template library for Bosch BMP085 digital temperature and pressure sensor.
-
+I2C-based template library for Bosch BMP085 digital temperature and pressure sensor for Energia.
 
  Created by Adrian Studer, April 2013. 
  
  Distributed under MIT License, see license.txt for details.   
+
+ This library was developed with Energia on MSP430G2553 LaunchPad. It should be easily portable to
+ Arduino by replacing Energia.h. 
+
+ Pin out on MSP430 LaunchPad: 
+   P1_6 => I2C SCL
+   P1_7 => I2C SDA
+   You might need to remove LED2 jumper for I2C to work properly.
+   *I had to patch Energia to make this work for MSP430G2553* https://github.com/energia/Energia/pull/226
    
  Usage:
    1. Instantiate sensor template
