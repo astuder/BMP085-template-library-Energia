@@ -36,11 +36,11 @@ Examples
 --------
 
 * Instantiating sensor with default settings:
-     BMP085<> MySensor;
+     BMP085&lt;&gt; MySensor;
 * Instantiating sensor connecting EOC to pin 1.5, no oversampling:
-     BMP085<0,P1_5> MySensor;
+     BMP085&lt;0,P1_5&gt; MySensor;
 * Instantiating sensor with highest precision pressure reading
-     BMP085<3> MySensor;
+     BMP085&lt;3&gt; MySensor;
  
 * Initalizing sensor on startup
      MySensor.begin();
@@ -54,7 +54,7 @@ Examples
 Template
 --------
 
-BMP085<oversampling,eocpin,i2caddress>
+_BMP085&lt;oversampling,eocpin,i2caddress&gt;_
 * oversampling - Precision of pressure reading, 0-3 (low-high), 4=read temperature only, default is 0
         0 is fastest (max 10ms), 3 slowest (max 31ms)
         Oversampling also increases code sizeby 80-90 bytes
