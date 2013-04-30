@@ -20,49 +20,60 @@ Connections for MSP430 LaunchPad
 
 You might need to remove LED2 jumper for I2C to work properly.
 
-*I also had to patch Energia to make this work for MSP430G2553* https://github.com/energia/Energia/pull/226
+**I also had to patch Energia to make this work for MSP430G2553** https://github.com/energia/Energia/pull/226
 
 Usage
 -----
 
 1. Instantiate sensor template
-2. Call begin() once when starting up
-3. Call refresh() to retrive fresh raw data from sensor
-   Raw readings are now available through attributes "rawTemperature" and "rawPressure"
-4. Call calculate() to calculate temperature and pressure based on raw data
-5. Access temperature and pressure through attributes "temperature" and "pressure"
+2. Call **begin()** once when starting up
+3. Call **refresh()** to retrive fresh raw data from sensor
+   Raw readings are now available through attributes **rawTemperature** and **rawPressure**
+4. Call **calculate()** to calculate temperature and pressure based on raw data
+5. Access temperature and pressure through attributes **temperature** and **pressure**
  
 Examples
 --------
 
-* Instantiating sensor with default settings:
-     BMP085&lt;&gt; MySensor;
-* Instantiating sensor connecting EOC to pin 1.5, no oversampling:
-     BMP085&lt;0,P1_5&gt; MySensor;
-* Instantiating sensor with highest precision pressure reading
-     BMP085&lt;3&gt; MySensor;
+Instantiating sensor with default settings:
+
+> BMP085&lt;&gt; MySensor;
+
+Instantiating sensor connecting EOC to pin 1.5, no oversampling:
+
+> BMP085&lt;0,P1_5&gt; MySensor;
+
+Instantiating sensor with highest precision pressure reading
+
+> BMP085&lt;3&gt; MySensor;
  
-* Initalizing sensor on startup
-     MySensor.begin();
+Initalizing sensor on startup
+
+> MySensor.begin();
      
-* Retrieving a new temperature and pressure reading
-     MySensor.refresh();
-     MySensor.calculate();
-     int myTemperature = MySensor.temperature;
-     long myPressure = MySensor.pressure;
-   
+Retrieving a new temperature and pressure reading
+
+> MySensor.refresh();
+> MySensor.calculate();
+> int myTemperature = MySensor.temperature;
+> long myPressure = MySensor.pressure;
+  
 Template
 --------
 
-_BMP085&lt;oversampling,eocpin,i2caddress&gt;_
-* oversampling - Precision of pressure reading, 0-3 (low-high), 4=read temperature only, default is 0
-        0 is fastest (max 10ms), 3 slowest (max 31ms)
-        Oversampling also increases code sizeby 80-90 bytes
-        Reading temperature only takes 5ms and reduces code size by 700 bytes
-* eocpin - Digital pin connected to the sensor's EOC pin, 0=not connected, default is 0
-        Using the EOC pin is typically 30% faster than waiting a fixed time when reading sensor data
-        Sketch size grows by 20-200 bytes depending on use of digitalRead() in your sketch
-* i2caddress - I2C address of sensor, default is 0x77
+> BMP085&lt;oversampling,eocpin,i2caddress&gt;
+
+* oversampling - Precision of pressure reading
+** 0-3 (low-high), 4=read temperature only, default is 0
+** 0 is fastest (max 10ms), 3 slowest (max 31ms)
+** Oversampling also increases code sizeby 80-90 bytes
+** Reading temperature only takes 5ms and reduces code size by 700 bytes
+* eocpin - Digital pin connected to the sensor's EOC pin
+** 0=not connected, default is 0
+** Using the EOC pin is typically 30% faster than waiting a fixed time when reading sensor data
+** Sketch size grows by 20-200 bytes depending on use of digitalRead() in your sketch
+* i2caddress - I2C address of sensor
+** default is 0x77
 
 Methods
 -------
