@@ -1,13 +1,12 @@
 /*
- BMP085_Test - Example of using I2C-based template library for Bosch BMP085 digital pressure sensor.
+ ReadSensor - Basic example of using I2C-based template library for Bosch BMP085 digital pressure sensor.
    Created by Adrian Studer, April 2013.
-   
    Distributed under MIT License, see license.txt for details.   
 */
 
-#include "BMP085_t.h"      // import BMP085 template library
+#include <BMP085_t.h>      // import BMP085 template library
 
-BMP085<1> PSensor;         // instantiate sensor, 3 = high precision pressure reading
+BMP085<0> PSensor;         // instantiate sensor, 0 = low precision pressure reading
 
 void setup()
 {
@@ -20,7 +19,7 @@ void loop()
   PSensor.refresh();                    // read current sensor data
   PSensor.calculate();                  // run calculations for temperature and pressure
   Serial.print("Temperature: ");         
-  Serial.print((PSensor.temperature+5)/10);  // display temperature in Celcius
+  Serial.print((PSensor.temperature+5)/10);  // display temperature in Celsius
   Serial.println("C");
   Serial.print("Pressure:    ");
   Serial.print((PSensor.pressure+50)/100);   // display pressure in hPa

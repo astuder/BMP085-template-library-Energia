@@ -1,0 +1,13 @@
+BMP085	KEYWORD1
+
+begin	KEYWORD2
+refresh	KEYWORD2
+calculate	KEYWORD2
+
+temperature	LITERAL2
+pressure	LITERAL2
+rawTemperature	LITERAL2
+rawPressure	LITERAL2
+
+
+

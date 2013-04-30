@@ -1,7 +1,6 @@
 I2C-based template library for Bosch BMP085 digital temperature and pressure sensor for Energia.
 
  Created by Adrian Studer, April 2013. 
- 
  Distributed under MIT License, see license.txt for details.   
 
  This library was developed with Energia on MSP430G2553 LaunchPad. It should be easily portable to
@@ -43,7 +42,7 @@ I2C-based template library for Bosch BMP085 digital temperature and pressure sen
      oversampling - Precision of pressure reading, 0-3 (low-high), 4=read temperature only, default is 0
         0 is fastest (max 10ms), 3 slowest (max 31ms)
         Oversampling also increases code sizeby 80-90 bytes
-        Reading temperature only takes 5ms and reducess code size by 700 bytes
+        Reading temperature only takes 5ms and reduces code size by 700 bytes
      eocpin - Digital pin connected to the sensor's EOC pin, 0=not connected, default is 0
         Using the EOC pin is typically 30% faster than waiting a fixed time when reading sensor data
         Sketch size grows by 20-200 bytes depending on use of digitalRead() in your sketch
@@ -55,7 +54,7 @@ I2C-based template library for Bosch BMP085 digital temperature and pressure sen
    calculate - Calculates temperature and pressure from raw sensor data
  
  Attributes:
-   temperature - Temperature in 0.1 degree Celcius
+   temperature - Temperature in 0.1 degree Celsius
    pressure - Pressure in Pascal
    rawTemperature - Raw temperature reading from sensor
    rawPressure - Raw pressure reading from sensor
