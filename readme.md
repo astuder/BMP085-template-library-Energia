@@ -63,27 +63,19 @@ Template
 
 	BMP085<oversampling,eocpin,i2caddress>
 
-* oversampling - Precision of pressure reading
+oversampling - Precision of pressure reading
+* 0-3 (low-high), 4=read temperature only, default is 0
+* 0 is fastest (max 10ms), 3 slowest (max 31ms)
+* Oversampling also increases code sizeby 80-90 bytes
+* Reading temperature only takes 5ms and reduces code size by 700 bytes
 
-  0-3 (low-high), 4=read temperature only, default is 0
+eocpin - Digital pin connected to the sensor's EOC pin
+* 0=not connected, default is 0
+* Using the EOC pin is typically 30% faster than waiting a fixed time when reading sensor data
+* Sketch size grows by 20-200 bytes depending on use of digitalRead() in your sketch
 
-  0 is fastest (max 10ms), 3 slowest (max 31ms)
-
-  Oversampling also increases code sizeby 80-90 bytes
-
-  Reading temperature only takes 5ms and reduces code size by 700 bytes
-
-* eocpin - Digital pin connected to the sensor's EOC pin
-
-  0=not connected, default is 0
-
-  Using the EOC pin is typically 30% faster than waiting a fixed time when reading sensor data
-
-  Sketch size grows by 20-200 bytes depending on use of digitalRead() in your sketch
-
-* i2caddress - I2C address of sensor
-
-  default is 0x77
+i2caddress - I2C address of sensor
+* default is 0x77
 
 Methods
 -------
