@@ -4,6 +4,7 @@
    Distributed under MIT License, see license.txt for details.   
 */
 
+#include <Wire.h>          // required by BMP085 library
 #include <BMP085_t.h>      // import BMP085 template library
 
 BMP085<0> PSensor;         // instantiate sensor, 0 = low precision pressure reading
@@ -11,6 +12,7 @@ BMP085<0> PSensor;         // instantiate sensor, 0 = low precision pressure rea
 void setup()
 {
   Serial.begin(9600);      // initialize serial, used to display readings in Serial Monitor
+  Wire.begin();            // initialize I2C that connects to sensor
   PSensor.begin();         // initalize pressure sensor
 }
 

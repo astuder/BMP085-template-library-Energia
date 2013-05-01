@@ -106,7 +106,6 @@ Attributes
 
 #include <inttypes.h>
 #include <Energia.h>
-#include <Wire.h>
 
 //#define DEBUG_BMP085           // uncomment for debug output (init serial in your sketch!)
 
@@ -163,8 +162,6 @@ public:
   // call once to initalize, reads sensor calibration data
   void begin()              
   {
-    Wire.begin();
-
 #ifdef DEBUG_BMP085
     // verify that we're actually talking to a BMP085 sensor
     if(m_read8(BMP085_REG_ID) != BMP085_CHIP_ID) {
