@@ -46,7 +46,11 @@ Instantiating sensor connecting EOC to pin 1.5, no oversampling:
 Instantiating sensor with highest precision pressure reading
 
 	BMP085<3> MySensor;
- 
+
+Instantiating sensor for temperature reading only, output in Fahrenheit
+
+	BMP085<4,0,BMP085_F> MySensor;
+
 Initalizing sensor on startup
 
 	MySensor.begin();
@@ -61,7 +65,7 @@ Retrieving a new temperature and pressure reading
 Template
 --------
 
-	BMP085<oversampling,eocpin,i2caddress>
+	BMP085<oversampling, eocpin, tempunit, i2caddress>
 
 oversampling - Precision of pressure reading
 * 0-3 (low-high), 4=read temperature only, default is 0
@@ -73,6 +77,10 @@ eocpin - Digital pin connected to the sensor's EOC pin
 * 0=not connected, default is 0
 * Using the EOC pin is typically 30% faster than waiting a fixed time when reading sensor data
 * Sketch size grows by 20-200 bytes depending on use of digitalRead() in your sketch
+
+tempunit - Unit for temperature calculation
+* BMP085_C=Celsius, BMP085_F=Fahrenheit
+* default is BMP085_C
 
 i2caddress - I2C address of sensor
 * default is 0x77

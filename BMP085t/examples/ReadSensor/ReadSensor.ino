@@ -19,7 +19,9 @@ void loop()
   PSensor.refresh();                    // read current sensor data
   PSensor.calculate();                  // run calculations for temperature and pressure
   Serial.print("Temperature: ");         
-  Serial.print((PSensor.temperature+5)/10);  // display temperature in Celsius
+  Serial.print(PSensor.temperature/10);  // display temperature in Celsius
+  Serial.print(".");
+  Serial.print(PSensor.temperature%10);  // display temperature in Celsius
   Serial.println("C");
   Serial.print("Pressure:    ");
   Serial.print((PSensor.pressure+50)/100);   // display pressure in hPa

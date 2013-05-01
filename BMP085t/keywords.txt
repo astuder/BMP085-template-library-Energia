@@ -4,6 +4,9 @@ begin	KEYWORD2
 refresh	KEYWORD2
 calculate	KEYWORD2
 
+BMP085_C	LITERAL1
+BMP085_F	LITERAL1
+
 temperature	LITERAL2
 pressure	LITERAL2
 rawTemperature	LITERAL2
