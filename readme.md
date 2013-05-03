@@ -1,26 +1,35 @@
-Bosch BMP085 Template Library
-=============================
-
+BMP085_t.h - I2C-based template library for Bosch BMP085 digital pressure sensor.
 Created by Adrian Studer, April 2013.
 
 Distributed under MIT License, see license.txt for details.   
-
-This library was developed with Energia on MSP430G2553 LaunchPad. It should be easily portable to
-Arduino by replacing Energia.h. 
 
 The Bosch BMP085 is a barometric pressure sensor with I2C interface. 
 Multiple vendors like Adafruit and Sparkfun sell breakout boards. It is also quite commonly found
 on cheap chinese IMUs, for example the GY-80.
 
-Connections for MSP430 LaunchPad
---------------------------------
+MSP430
+------
 
+Tested with Energia 0101E0009, LaunchPad Rev1.5, TI MSP430G2553
+
+Connections
 * P1_6 => I2C SCL
 * P1_7 => I2C SDA
 
-You might need to remove LED2 jumper for I2C to work properly.
+You might have to remove LED2 jumper for I2C to work properly.
 
-**I also had to patch Energia to make this work for MSP430G2553** https://github.com/energia/Energia/pull/226
+**I had to patch Energia E0009 to make this work for MSP430G2553**
+* https://github.com/energia/Energia/pull/226 to fix 1 byte read
+* https://github.com/energia/Energia/pull/235 to fix requestFrom restart condition
+
+Arduino
+-------
+
+Tested with Arduino 1.0.4, Arduino Uno R3, Atmel ATmega328
+
+Connections
+* A5 => I2C SCL
+* A4 => I2C SDA
 
 Usage
 -----
