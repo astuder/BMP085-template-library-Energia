@@ -1,3 +1,6 @@
+Bosch BMP085 Template Library for Energia and Arduino
+=====================================================
+
 BMP085_t.h - I2C-based template library for Bosch BMP085 digital pressure sensor.
 Created by Adrian Studer, April 2013.
 
