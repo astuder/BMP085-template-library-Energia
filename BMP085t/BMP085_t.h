@@ -23,6 +23,18 @@ You might have to remove LED2 jumper for I2C to work properly.
 * https://github.com/energia/Energia/pull/226 to fix 1 byte read
 * https://github.com/energia/Energia/pull/235 to fix requestFrom restart condition
 
+Stellaris
+---------
+
+Tested with Energia 0101E0009, Stellaris LaunchPad Rev A, TI LX4F120H
+
+Connections
+* PD_0 / SCL(3) => I2C SCL 
+* PD_1 / SDA(3) => I2C SDA 
+
+Energia uses I2C module 3 as defeault. To use a different I2C module call
+Wire.setModule(N) before Wire.begin(), where N is the desired module.
+
 Arduino
 -------
 
@@ -36,6 +48,7 @@ Usage
 -----
 
 - Instantiate sensor template
+- Initalize Wire I2C library
 - Call **begin()** once when starting up
 - Call **refresh()** to retrive fresh raw data from sensor
 - Raw readings are now available through attributes **rawTemperature** and **rawPressure**
@@ -61,10 +74,11 @@ Instantiating sensor for temperature reading only, output in Fahrenheit
 
 	BMP085<4,0,BMP085_F> MySensor;
 
-Initalizing sensor on startup
+Initalizing I2C and sensor on startup
 
+	Wire.begin();
 	MySensor.begin();
-     
+
 Retrieving a new temperature and pressure reading
 
 	MySensor.refresh();
@@ -85,6 +99,7 @@ oversampling - Precision of pressure reading
 
 eocpin - Digital pin connected to the sensor's EOC pin
 * 0=not connected, default is 0
+* The EOC pin indicates when sensor data is ready to be read.
 * Using the EOC pin is typically 30% faster than waiting a fixed time when reading sensor data
 * Sketch size grows by 20-200 bytes depending on use of digitalRead() in your sketch
 
@@ -98,7 +113,7 @@ i2caddress - I2C address of sensor
 Methods
 -------
 
-* begin - Initalizes I2C, reads sensor calibraiton data, configures EOC pin as input (optional)
+* begin - Reads sensor calibraiton data, configures EOC pin as input (optional)
 * refresh - Retrieves fresh raw data from sensor
 * calculate - Calculates temperature and pressure from raw sensor data
  
