@@ -13,7 +13,8 @@ on cheap chinese IMUs, for example the GY-80.
 MSP430
 ------
 
-Tested with Energia 0101E0009, LaunchPad Rev1.5, TI MSP430G2553
+Tested with Energia 0101E0009
+LaunchPad Rev1.5, TI MSP430G2553
 
 Connections
 * P1_6 => I2C SCL
@@ -25,10 +26,12 @@ You might have to remove LED2 jumper for I2C to work properly.
 * https://github.com/energia/Energia/pull/226 to fix 1 byte read
 * https://github.com/energia/Energia/pull/235 to fix requestFrom restart condition
 
-Stellaris
----------
+Tiva and Stellaris
+------------------
 
-Tested with Energia 0101E0009, Stellaris LaunchPad Rev A, TI LX4F120H
+Tested with Energia 0101E0009 
+Stellaris LaunchPad Rev A, TI LM4F120H5QR
+Tiva C Series LaunchPad Rev A, TI TM4C123GH6PM
 
 Connections
 * PD_0 / SCL(3) => I2C SCL 
@@ -40,7 +43,8 @@ Wire.setModule(N) before Wire.begin(), where N is the desired module.
 Arduino
 -------
 
-Tested with Arduino 1.0.4, Arduino Uno R3, Atmel ATmega328
+Tested with Arduino 1.0.4
+Arduino Uno R3, Atmel ATmega328
 
 Connections
 * A5 => I2C SCL

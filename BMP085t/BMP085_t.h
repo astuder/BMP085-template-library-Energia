@@ -11,7 +11,8 @@ on cheap chinese IMUs, for example the GY-80.
 MSP430
 ------
 
-Tested with Energia 0101E0009, LaunchPad Rev1.5, TI MSP430G2553
+Tested with Energia 0101E0009
+LaunchPad Rev1.5, TI MSP430G2553
 
 Connections
 * P1_6 => I2C SCL
@@ -23,10 +24,12 @@ You might have to remove LED2 jumper for I2C to work properly.
 * https://github.com/energia/Energia/pull/226 to fix 1 byte read
 * https://github.com/energia/Energia/pull/235 to fix requestFrom restart condition
 
-Stellaris
----------
+Tiva and Stellaris
+------------------
 
-Tested with Energia 0101E0009, Stellaris LaunchPad Rev A, TI LX4F120H
+Tested with Energia 0101E0009
+Stellaris LaunchPad Rev A, TI LX4F120H5QR
+Tiva C Series LaunchPad Rev A, TI TM4C123GH6PM
 
 Connections
 * PD_0 / SCL(3) => I2C SCL 
@@ -38,7 +41,8 @@ Wire.setModule(N) before Wire.begin(), where N is the desired module.
 Arduino
 -------
 
-Tested with Arduino 1.0.4, Arduino Uno R3, Atmel ATmega328
+Tested with Arduino 1.0.4
+Arduino Uno R3, Atmel ATmega328
 
 Connections
 * A5 => I2C SCL
@@ -66,7 +70,7 @@ Instantiating sensor connecting EOC to pin 1.5, no oversampling:
 
 	BMP085<0,P1_5> MySensor;
 
-Instantiating sensor with highest precision pressure reading
+Instantiating sensor for highest precision pressure reading
 
 	BMP085<3> MySensor;
 
@@ -94,7 +98,7 @@ Template
 oversampling - Precision of pressure reading
 * 0-3 (low-high), 4=read temperature only, default is 0
 * 0 is fastest (max 10ms), 3 slowest (max 31ms)
-* Oversampling also increases code sizeby 80-90 bytes
+* Oversampling also increases code size by 80-90 bytes
 * Reading temperature only takes 5ms and reduces code size by 700 bytes
 
 eocpin - Digital pin connected to the sensor's EOC pin
@@ -113,7 +117,7 @@ i2caddress - I2C address of sensor
 Methods
 -------
 
-* begin - Reads sensor calibraiton data, configures EOC pin as input (optional)
+* begin - Reads sensor calibration data, configures EOC pin as input (optional)
 * refresh - Retrieves fresh raw data from sensor
 * calculate - Calculates temperature and pressure from raw sensor data
  
