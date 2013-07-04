@@ -14,7 +14,7 @@ MSP430
 ------
 
 Tested with Energia 0101E0009
-LaunchPad Rev1.5, TI MSP430G2553
+* LaunchPad Rev1.5, TI MSP430G2553
 
 Connections
 * P1_6 => I2C SCL
@@ -30,8 +30,8 @@ Tiva and Stellaris
 ------------------
 
 Tested with Energia 0101E0009 
-Stellaris LaunchPad Rev A, TI LM4F120H5QR
-Tiva C Series LaunchPad Rev A, TI TM4C123GH6PM
+* Stellaris LaunchPad Rev A, TI LM4F120H5QR
+* Tiva C Series LaunchPad Rev A, TI TM4C123GH6PM
 
 Connections
 * PD_0 / SCL(3) => I2C SCL 
