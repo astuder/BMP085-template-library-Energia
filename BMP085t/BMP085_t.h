@@ -11,31 +11,31 @@ on cheap chinese IMUs, for example the GY-80.
 MSP430
 ------
 
-Tested with Energia 0101E0009
-LaunchPad Rev1.5, TI MSP430G2553
+Tested with Energia 0101E0010
+* LaunchPad Rev1.5 w/ TI MSP430G2553
+* LaunchPad w/ TI MSP430F5529
 
-Connections
-* P1_6 => I2C SCL
-* P1_7 => I2C SDA
+Connections MSP430G2553
+* P1.6 => I2C SCL
+* P1.7 => I2C SDA
+* You might have to remove LED2 jumper for I2C to work properly.
 
-You might have to remove LED2 jumper for I2C to work properly.
-
-**I had to patch Energia E0009 to make this work for MSP430G2553**
-* https://github.com/energia/Energia/pull/226 to fix 1 byte read
-* https://github.com/energia/Energia/pull/235 to fix requestFrom restart condition
+Connections MSP430F5529
+* P3.0 => I2C SCL
+* P3.1 => I2C SDA
 
 Tiva and Stellaris
 ------------------
 
-Tested with Energia 0101E0009
-Stellaris LaunchPad Rev A, TI LX4F120H5QR
-Tiva C Series LaunchPad Rev A, TI TM4C123GH6PM
+Tested with Energia 0101E0010
+* Stellaris LaunchPad Rev A, TI LM4F120H5QR
+* Tiva C Series LaunchPad Rev A, TI TM4C123GH6PM
 
 Connections
-* PD_0 / SCL(3) => I2C SCL 
-* PD_1 / SDA(3) => I2C SDA 
+* PD.0 / SCL(3) => I2C SCL 
+* PD.1 / SDA(3) => I2C SDA 
 
-Energia uses I2C module 3 as defeault. To use a different I2C module call
+Energia uses I2C module 3 as default. To use a different I2C module call
 Wire.setModule(N) before Wire.begin(), where N is the desired module.
 
 Arduino
