@@ -12,6 +12,8 @@ on cheap chinese IMUs, for example the GY-80.
 
 Users [report](http://forum.43oh.com/topic/3777-energia-library-bosch-bmp085-template-library/?p=44410), that this library also works with the newer Bosch BMP180 pressure sensor, as well as [Software I2C Libraries](http://forum.43oh.com/topic/3617-energia-library-software-i2c-master-for-msp430g2553/).
 
+[This thread on 43oh](http://forum.43oh.com/topic/3777-energia-library-bosch-bmp085-template-library/) is the best place to report issues with this library, ask questions, or simply show what you built with it.
+
 MSP430
 ------
 
