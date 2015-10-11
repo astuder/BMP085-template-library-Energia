@@ -1,4 +1,4 @@
-BMP085 Template Library Copyright (c) 2013 Adrian Studer
+BMP085 Template Library Copyright (c) 2013-2015 Adrian Studer
 
 The MIT License (MIT)
 

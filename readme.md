@@ -13,14 +13,14 @@ on cheap chinese IMUs, for example the GY-80.
 MSP430
 ------
 
-Tested with Energia 0101E0010
+Tested with Energia 0101E0016
 * LaunchPad Rev1.5 w/ TI MSP430G2553
 * LaunchPad w/ TI MSP430F5529
 
 Connections MSP430G2553
 * P1.6 => I2C SCL
 * P1.7 => I2C SDA
-* You might have to remove LED2 jumper for I2C to work properly.
+* You may have to remove LED2 jumper for I2C to work properly.
 
 Connections MSP430F5529
 * P3.0 => I2C SCL
@@ -100,7 +100,7 @@ Template
 oversampling - Precision of pressure reading
 * 0-3 (low-high), 4=read temperature only, default is 0
 * 0 is fastest (max 10ms), 3 slowest (max 31ms)
-* Oversampling also increases code sizeby 80-90 bytes
+* Oversampling also increases code size by 80-90 bytes
 * Reading temperature only takes 5ms and reduces code size by 700 bytes
 
 eocpin - Digital pin connected to the sensor's EOC pin
@@ -119,7 +119,7 @@ i2caddress - I2C address of sensor
 Methods
 -------
 
-* begin - Reads sensor calibraiton data, configures EOC pin as input (optional)
+* begin - Reads sensor calibration data, configures EOC pin as input (optional)
 * refresh - Retrieves fresh raw data from sensor
 * calculate - Calculates temperature and pressure from raw sensor data
  

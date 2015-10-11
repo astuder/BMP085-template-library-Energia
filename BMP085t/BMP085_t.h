@@ -11,14 +11,14 @@ on cheap chinese IMUs, for example the GY-80.
 MSP430
 ------
 
-Tested with Energia 0101E0010
+Tested with Energia 0101E0016
 * LaunchPad Rev1.5 w/ TI MSP430G2553
 * LaunchPad w/ TI MSP430F5529
 
 Connections MSP430G2553
 * P1.6 => I2C SCL
 * P1.7 => I2C SDA
-* You might have to remove LED2 jumper for I2C to work properly.
+* You may have to remove LED2 jumper for I2C to work properly.
 
 Connections MSP430F5529
 * P3.0 => I2C SCL
@@ -70,7 +70,7 @@ Instantiating sensor connecting EOC to pin 1.5, no oversampling:
 
 	BMP085<0,P1_5> MySensor;
 
-Instantiating sensor for highest precision pressure reading
+Instantiating sensor with highest precision pressure reading
 
 	BMP085<3> MySensor;
 
@@ -413,22 +413,34 @@ private:
   
   // read 8 bits from I2C
   uint8_t m_read8(uint8_t addr) {
+    uint8_t ret;
+
     Wire.beginTransmission(i2caddress);
     Wire.write(addr);
-    Wire.endTransmission(false);
+    Wire.endTransmission();
 
+    Wire.beginTransmission(i2caddress);
     Wire.requestFrom(i2caddress, (uint8_t)1);    // need to cast int to avoid compiler warnings
-    return Wire.read();
+    ret = Wire.read();
+    Wire.endTransmission();
+	
+    return ret;
   };
 
   // read 16 bits from I2C
   uint16_t m_read16(uint8_t addr) {
+    uint16_t ret;
+	
     Wire.beginTransmission(i2caddress);
     Wire.write(addr);
-    Wire.endTransmission(false);
+    Wire.endTransmission();
 
+    Wire.beginTransmission(i2caddress);
     Wire.requestFrom(i2caddress, (uint8_t)2);    // need to cast int to avoid compiler warnings
-    return (Wire.read() << 8 | Wire.read());
+    ret = (Wire.read() << 8) | Wire.read();
+    Wire.endTransmission();
+	
+    return ret;
   };
 
 };  // end struct/template BMP085
