@@ -10,6 +10,8 @@ The Bosch BMP085 is a barometric pressure sensor with I2C interface.
 Multiple vendors like Adafruit and Sparkfun sell breakout boards. It is also quite commonly found
 on cheap chinese IMUs, for example the GY-80.
 
+Users [report](http://forum.43oh.com/topic/3777-energia-library-bosch-bmp085-template-library/?p=44410), that this library also works with the newer Bosch BMP180 pressure sensor, as well as [Software I2C Libraries](http://forum.43oh.com/topic/3617-energia-library-software-i2c-master-for-msp430g2553/).
+
 MSP430
 ------
 
