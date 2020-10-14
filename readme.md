@@ -54,6 +54,11 @@ Connections
 * A5 => I2C SCL
 * A4 => I2C SDA
 
+Installation
+------------
+
+Copy the folder **BMP085t** to the library folder of Energia or Arduino. For details, follow the documentation for manually installing libraries on [Arduino](https://www.arduino.cc/en/guide/libraries#toc5). Energia works the same but libraries are stored in **user/Documents/Energia/libraries**.
+
 Usage
 -----
 
